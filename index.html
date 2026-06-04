@@ -3,91 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anthony Quiroz | Perfil Profesional</title>
+    <title>Anthony Quiroz | Perfil Profesional Premium</title>
     <style>
         :root {
-            --primary: #1e3a8a; /* Azul oscuro corporativo */
-            --secondary: #3b82f6; /* Azul vibrante */
-            --bg: #f8fafc;
-            --text: #334155;
+            --primary-bg: #0d1117; /* Negro profundo corporativo */
+            --secondary-bg: #161b22; /* Negro-gris para elementos */
+            --accent: #c4a165; /* Oro envejecido premium */
+            --text-main: #e2e8f0; /* Blanco-gris suave */
+            --text-secondary: #94a3b8; /* Gris medio para metadatos */
             --white: #ffffff;
+            --border-color: #30363d; /* Gris oscuro para bordes sutiles */
         }
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Fuente serif elegante y profesional */
+            background-color: var(--primary-bg);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 10.5pt; /* Tamaño de fuente óptimo para lectura */
         }
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background-color: var(--primary-bg);
+            border-bottom: 1px solid var(--border-color);
             color: var(--white);
-            padding: 3rem 1.5rem;
+            padding: 4rem 1.5rem;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        header .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(196, 161, 101, 0.3);
         }
         header h1 {
             margin: 0;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-transform: uppercase;
         }
         header p {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             margin-top: 0.5rem;
             opacity: 0.9;
+            color: var(--accent);
         }
         .contact-links {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
         .contact-links a {
-            background-color: rgba(255, 255, 255, 0.2);
             color: var(--white);
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
+            padding: 0.5rem 0;
             font-weight: 500;
-            transition: background 0.3s ease;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         .contact-links a:hover {
-            background-color: rgba(255, 255, 255, 0.4);
+            border-color: var(--accent);
         }
         .container {
-            max-width: 800px;
-            margin: 2rem auto;
+            max-width: 900px;
+            margin: 3rem auto;
             padding: 0 1.5rem;
         }
         .accordion {
-            background-color: var(--white);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
+            background-color: var(--secondary-bg);
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .accordion:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(196, 161, 101, 0.1);
         }
         .accordion-header {
-            background-color: var(--white);
-            padding: 1.2rem 1.5rem;
+            background-color: var(--secondary-bg);
+            padding: 1.5rem 2rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--primary);
-            transition: background 0.3s ease;
-        }
-        .accordion-header:hover {
-            background-color: #f1f5f9;
+            font-size: 1.25rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .icon {
             transition: transform 0.3s ease;
-            font-size: 1.2rem;
-            color: var(--secondary);
+            font-size: 1rem;
+            color: var(--accent);
         }
         .active .icon {
             transform: rotate(180deg);
@@ -96,112 +115,140 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.4s ease;
-            background-color: var(--white);
+            background-color: var(--primary-bg);
             border-top: 1px solid transparent;
         }
         .active .accordion-content {
-            padding: 1.5rem;
-            max-height: 2000px;
-            border-top: 1px solid #e2e8f0;
+            padding: 2rem;
+            max-height: 5000px; /* Suficiente para todo el contenido desglosado */
+            border-top: 1px solid var(--border-color);
         }
         .item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
         }
         .item:last-child {
             margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
         .item h4 {
             margin: 0 0 0.3rem 0;
-            color: var(--primary);
-            font-size: 1.1rem;
+            color: var(--accent);
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
         }
         .meta {
             font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
             font-style: italic;
         }
         ul {
             margin: 0;
-            padding-left: 1.2rem;
+            padding-left: 1.5rem;
         }
         li {
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+            text-align: justify;
         }
         .highlight {
-            background-color: #eff6ff;
-            border-left: 4px solid var(--secondary);
-            padding: 1rem;
+            background-color: var(--secondary-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
             border-radius: 0 4px 4px 0;
+        }
+        .group-heading {
+            color: var(--white);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .group-content {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .skill-level {
+            font-weight: bold;
+            color: var(--accent);
         }
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #94a3b8;
+            padding: 3rem;
+            color: var(--text-secondary);
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <img src="WhatsApp Image 2021-07-16 at 7.28.06 PM.jpeg" alt="Anthony Quiroz, Auditor Junior Premium" class="profile-pic">
         <h1>ANTHONY QUIROZ</h1>
-        <p>Gestión Financiera | Automatización | Análisis de Datos</p>
+        <p>Gestión Financiera | Automatización Analítica | Auditoría</p>
         <div class="contact-links">
-            <a href="https://www.linkedin.com/in/anthony-francois-quiroz-benavides-706b39398" target="_blank">🔗 LinkedIn</a>
-            <a href="mailto:anthonyquiroz141@hotmail.com">✉️ Contactar</a>
+            <a href="https://www.linkedin.com/in/anthony-francois-quiroz-benavides-706b39398" target="_blank">LinkedIn</a>
+            <a href="mailto:anthonyquiroz141@hotmail.com">Contactar por Correo</a>
         </div>
     </header>
 
     <div class="container">
         
-        <div class="accordion">
+        <div class="accordion highlight">
             <div class="accordion-header">
-                <span>🚀 Proyectos de Automatización Destacados</span>
+                <span>Proyectos de Automatización y Optimización de Flujos de Trabajo (VBA)</span>
                 <span class="icon">▼</span>
             </div>
             <div class="accordion-content">
-                <div class="item highlight">
-                    <h4>Sistema de Automatización de Correo Masivo (VBA)</h4>
-                    <p>Diseño y programación estructurada de una herramienta en Visual Basic para Aplicaciones (VBA) integrada con Microsoft Outlook. El desarrollo permite el envío masivo y automatizado de correos electrónicos, adjuntando archivos PDF únicos y personalizados para cada destinatario. Esta solución mitiga errores manuales y optimiza drásticamente los tiempos de respuesta en flujos de auditoría.</p>
-                </div>
+                <p>Diseño y programación estructurada de una herramienta avanzada en Visual Basic para Aplicaciones (VBA), integrada directamente con Microsoft Outlook. Este script automatiza el flujo completo de envío masivo de notificaciones financieras, adjuntando archivos PDF únicos y totalmente personalizados para cada destinatario en un solo clic. Esta solución mitiga los errores de manipulación manual y optimiza drásticamente los tiempos de respuesta operativos en un 90% dentro de los flujos de auditoría.</p>
             </div>
         </div>
 
         <div class="accordion">
             <div class="accordion-header">
-                <span>💼 Experiencia Laboral</span>
+                <span>Experiencia Laboral</span>
                 <span class="icon">▼</span>
             </div>
             <div class="accordion-content">
                 <div class="item">
-                    <h4>Auditor Junior</h4>
+                    <h4>Auditor Junior de Auditoría</h4>
                     <div class="meta">Aliado Contable Matuberm Cia Ltda | Octubre 2025 – Actualidad</div>
                     <ul>
-                        <li>Ejecución estructurada de auditorías financieras y revisión exhaustiva de controles internos.</li>
-                        <li>Elaboración de papeles de trabajo de nivel avanzado para empresas privadas e intermedio para públicas.</li>
+                        <li>Ejecución estructurada y analítica de auditorías financieras.</li>
+                        <li>Revisión exhaustiva de controles internos y validación de saldos contables.</li>
+                        <li>Elaboración, organización y custodia de papeles de trabajo de nivel Avanzado para empresas privadas e Intermedio para entidades públicas.</li>
                     </ul>
                 </div>
                 <div class="item">
-                    <h4>Responsable de Outsourcing / Pasante</h4>
-                    <div class="meta">SEBDOM S.A.S. | Mayo 2024 – Julio 2025</div>
+                    <h4>Responsable de Outsourcing Contable y Administrativo</h4>
+                    <div class="meta">SEBDOM S.A.S. | Noviembre 2024 – Julio 2025</div>
                     <ul>
-                        <li>Ascenso de Pasante a Responsable tras demostrar alto nivel técnico y detalle en los primeros 6 meses.</li>
-                        <li>Gestión integral de carteras, conciliaciones complejas y supervisión de obligaciones tributarias.</li>
+                        <li>Ascenso directo de Pasante a Responsable tras demostrar un alto nivel técnico, rigurosidad metodológica y excepcional atención al detalle en los primeros 6 meses de gestión.</li>
+                        <li>Gestión integral de carteras de clientes privados y públicos.</li>
+                        <li>Ejecución de conciliaciones complejas de cuentas y supervisión estricta de obligaciones tributarias vigentes.</li>
+                    0}
                     </ul>
                 </div>
                 <div class="item">
-                    <h4>Pasante de Auditoría y Consultoría</h4>
-                    <div class="meta">Leading Edge Audit & Consulting | Dic 2024 – Mar 2025</div>
+                    <h4>Pasante de Auditoría-Auxiliar y Consultoría</h4>
+                    <div class="meta">Leading Edge Audit & Consulting Quito | Diciembre 2024 – Marzo 2025</div>
                     <ul>
-                        <li>Soporte técnico en validación de saldos y preparación de informes bajo estrictos cronogramas normativos.</li>
+                        <li>Soporte técnico directo en la validación de saldos y análisis de conciliaciones bancarias.</li>
+                        <li>Participación activa en la estructuración de informes financieros bajo normativas locales e internacionales e informes de control interno.</li>
                     </ul>
                 </div>
                 <div class="item">
-                    <h4>Pasante Administrativo</h4>
-                    <div class="meta">Centro de Diálisis Dialicon S.A. | Sep 2022 – Ene 2023</div>
+                    <h4>Pasante Contable / Asistente Administrativo</h4>
+                    <div class="meta">Centro de Diálisis Dialicon S.A. | Septiembre 2022 – Enero 2023</div>
                     <ul>
-                        <li>Gestión operativa de proveedores, cálculo de retenciones y detalle mensual de activos.</li>
+                        <li>Supervisión y control del ciclo completo de proveedores: validación de comprobantes, cuadre de cajas chicas y planeación documentada de pagos.</li>
+                        <li>Liquidación de obligaciones con el IESS, control físico-lógico de activos fijos controlados y parametrización de retenciones en asientos diarios.</li>
                     </ul>
                 </div>
             </div>
@@ -209,49 +256,105 @@
 
         <div class="accordion">
             <div class="accordion-header">
-                <span>⚙️ Competencias Técnicas</span>
+                <span>Matriz de Habilidades y Competencias Técnicas Desglosadas</span>
                 <span class="icon">▼</span>
             </div>
             <div class="accordion-content">
-                <div class="item">
-                    <h4>Automatización y Código</h4>
-                    <p>Power Query, Macros en Excel, Visual Basic para Aplicaciones (VBA), Python (En formación), SQL (En formación).</p>
+                
+                <h3 class="group-heading">Contabilidad y Finanzas Especializadas</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Avanzado-Privadas</span>: Creación de Papeles de Trabajo, Conciliaciones Complejas, Análisis de Balances, Teneduría de Libros.</p>
+                    <p><span class="skill-level">Intermedio-Públicas</span>: Gestión y Control Administrativo, Normativa Contable Pública.</p>
+                    <p><span class="skill-level">Avanzado</span>: Contabilidad de Costos (Análisis de producción e inventarios).</p>
+                    <p><span class="skill-level">Intermedio</span>: Finanzas Corporativas (Matemáticas Financieras).</p>
                 </div>
-                <div class="item">
-                    <h4>Ofimática y Finanzas</h4>
-                    <p>Excel Avanzado (Automatización financiera y conciliaciones complejas).</p>
+
+                <h3 class="group-heading">Auditoría y Revisión Financiera</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Básico-SEPS</span>: Auditoría en el sector de la Economía Popular y Solidaria.</p>
+                    <p><span class="skill-level">Avanzado</span>: Creación de Papeles de Trabajo de Auditoría para el sector privado.</p>
+                    <p><span class="skill-level">Intermedio</span>: Creación de Papeles de Trabajo de Auditoría para el sector público.</p>
                 </div>
-                <div class="item">
-                    <h4>Sistemas Especializados</h4>
-                    <p>Contífico (Intermedio-Avanzado), Fénix (Intermedio), Plataformas de Control (eByE, Quipux), SRI, Superintendencia de Compañías.</p>
+
+                <h3 class="group-heading">Automatización, Análisis y Código</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Avanzado</span>: Macros (VBA) y Programación iterativa para optimización de flujos contables.</p>
+                    <p><span class="skill-level">Avanzado</span>: Modelado y Optimización con Excel (Tablas Dinámicas Complejas, Funciones Anidadas, Análisis de Datos).</p>
+                    <p><span class="skill-level">Avanzado</span>: Automatización Analítica (VBA con Outlook y Excel).</p>
+                    <p><span class="skill-level">Intermedio</span>: Inteligencia Artificial (Prompt Engineering Aplicada a Productividad).</p>
+                    <p><span class="skill-level">En formación</span>: Python, SQL y Power BI (Ruta de Ciencia de Datos y BI).</p>
+                    <p><span class="skill-level">Básico</span>: Visual Basic, Informática General.</p>
                 </div>
-                <div class="item">
-                    <h4>Idiomas</h4>
-                    <p>Inglés B2 (Reading y Listening) y B1 (Speaking y Writing).</p>
+
+                <h3 class="group-heading">Sistemas y Plataformas de Gestión</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Intermedio-Avanzado</span>: Plataforma Contífico (IA para Contabilidad).</p>
+                    <p><span class="skill-level">Intermedio</span>: Plataforma Fenix (Módulo Contabilidad).</p>
+                    <p><span class="skill-level">Intermedio</span>: Plataforma Supercias.</p>
+                    <p><span class="skill-level">Intermedio</span>: Plataforma SRI.</p>
+                    <p><span class="skill-level">Básico</span>: Plataforma Quipux, eByE.</p>
                 </div>
+
+                <h3 class="group-heading">Competencia Idiomática</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Inglés Profesional - Nivel B2</span>: Capacidad alta en comprensión lectora y auditiva, nivel B1 en producción oral y escrita.</p>
+                </div>
+
             </div>
         </div>
 
         <div class="accordion">
             <div class="accordion-header">
-                <span>🎓 Formación Académica</span>
+                <span>Capacitación y Especialización Académica Detallada</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                
+                <h3 class="group-heading">Tecnología de la Información y Automatización</h3>
+                <div class="group-content">
+                    <p><strong>Curso de Excel Avanzado y Tablas Dinámicas</strong> | *CEINNCADE / Ministerio de Trabajo* (Julio 2022 - 32h). Certificación acreditada en funciones avanzadas, macros y análisis de datos.</p>
+                    <p><strong>Curso de Excel Contable, Tributario y Laboral</strong> | *CEINNCADE / Ministerio de Trabajo* (Julio 2022). Aplicación práctica de Excel en entornos contables, laborales y tributarios.</p>
+                    <p><strong>Cursos Actuales (Daxus Latam):</strong> Formación avanzada en curso centrada en SQL, Power BI, Python y Excel Avanzado aplicados a la Ciencia de Datos y BI.</p>
+                    <p><strong>Curso de Manejo de la Inteligencia Artificial</strong> | *Daxus Latam* (En formación). Gestión eficiente de IA Generativa.</p>
+                    <p><strong>Visual Basic</strong> (Básico - Certificación).</p>
+                </div>
+
+                <h3 class="group-heading">Formación Contable y Auditoría</h3>
+                <div class="group-content">
+                    <p><strong>Creación de Papeles de Trabajo de Auditoría (Avanzado-Privadas / Intermedio-Públicas)</strong> (Certificación).</p>
+                    <p><strong>Contabilidad de Costos (Intermedio-Avanzado)</strong> (Certificación).</p>
+                    <p><strong>Auditoría (Básico-SEPS)</strong> (Certificación).</p>
+                    <p><strong>Curso de técnicas de estudio</strong> | *Ilvem*.</p>
+                    <p><strong>Curso Formación Militar</strong> | *U.E.FF.AA. Colegio Militar "Eloy Alfaro"*.</p>
+                </div>
+
+                <h3 class="group-heading">Competencia Idiomática (Inglés - Nivel B2)</h3>
+                <div class="group-content">
+                    <p><strong>Reading</strong>: B2 (Comprensión Lectora).</p>
+                    <p><strong>Listening</strong>: B2 (Comprensión Auditiva).</p>
+                    <p><strong>Speaking</strong>: B1 (Producción Oral).</p>
+                    <p><strong>Writing</strong>: B1 (Producción Escrita).</p>
+                    <p><strong>Cursos de inglés</strong> | *Charlotte Cendia*.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>Formación Académica Principal</span>
                 <span class="icon">▼</span>
             </div>
             <div class="accordion-content">
                 <div class="item">
                     <h4>Licenciado en Contabilidad y Auditoría</h4>
-                    <div class="meta">Universidad Central del Ecuador | 2019 – 2025</div>
-                    <p>Registro SENESCYT: 1005-2025-3239463</p>
+                    <div class="meta">Universidad Central del Ecuador | Marzo 2019 – Octubre 2025</div>
+                    <p>Registro oficial de título en SENESCYT: 1005-2025-3239463. Área de Conocimiento: Administración.</p>
                 </div>
                 <div class="item">
-                    <h4>Especialización en Data Science & BI</h4>
-                    <div class="meta">DAXUS Latam | Actualidad</div>
-                    <p>Formación enfocada en Power BI, SQL, automatización con Python y herramientas de Inteligencia Artificial.</p>
-                </div>
-                <div class="item">
-                    <h4>Certificaciones Oficiales</h4>
-                    <div class="meta">Ministerio de Trabajo / CEINNCADE | 2022</div>
-                    <p>Excel Avanzado, Tablas Dinámicas y Aplicación de Excel Contable, Tributario y Laboral.</p>
+                    <h4>Bachiller en Ciencias</h4>
+                    <div class="meta">U.E.FF.AA. Colegio Militar "Eloy Alfaro" | Septiembre 2013 – Julio 2018</div>
+                    <p>Calificación de rendimiento académico: 8.26.</p>
                 </div>
             </div>
         </div>
@@ -259,18 +362,18 @@
     </div>
 
     <footer>
-        <p>Curriculum Vitae Web - Anthony Quiroz</p>
+        <p>Perfil Profesional Web - Anthony Quiroz - Todos los derechos reservados</p>
     </footer>
 
     <script>
-        // Script para hacer que los menús se desplieguen al darles clic
+        // Script para la interactividad de los acordeones
         const accordions = document.querySelectorAll('.accordion-header');
         
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
                 const parent = this.parentElement;
                 
-                // Si quieres que al abrir una se cierren las demás, descomenta las siguientes 3 líneas:
+                // Opción: Cerrar los demás al abrir uno
                 // document.querySelectorAll('.accordion').forEach(other => {
                 //    if (other !== parent) other.classList.remove('active');
                 // });
