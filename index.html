@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony Quiroz | Perfil Profesional</title>
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Azul oscuro corporativo */
+            --secondary: #3b82f6; /* Azul vibrante */
+            --bg: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+        .contact-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .contact-links a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .accordion {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .accordion-header {
+            background-color: var(--white);
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            transition: background 0.3s ease;
+        }
+        .accordion-header:hover {
+            background-color: #f1f5f9;
+        }
+        .icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        .active .icon {
+            transform: rotate(180deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+            background-color: var(--white);
+            border-top: 1px solid transparent;
+        }
+        .active .accordion-content {
+            padding: 1.5rem;
+            max-height: 2000px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .item {
+            margin-bottom: 1.5rem;
+        }
+        .item:last-child {
+            margin-bottom: 0;
+        }
+        .item h4 {
+            margin: 0 0 0.3rem 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .meta {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+        ul {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+        li {
+            margin-bottom: 0.3rem;
+        }
+        .highlight {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            border-radius: 0 4px 4px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ANTHONY QUIROZ</h1>
+        <p>Gestión Financiera | Automatización | Análisis de Datos</p>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/anthony-francois-quiroz-benavides-706b39398" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:anthonyquiroz141@hotmail.com">✉️ Contactar</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>🚀 Proyectos de Automatización Destacados</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="item highlight">
+                    <h4>Sistema de Automatización de Correo Masivo (VBA)</h4>
+                    <p>Diseño y programación estructurada de una herramienta en Visual Basic para Aplicaciones (VBA) integrada con Microsoft Outlook. El desarrollo permite el envío masivo y automatizado de correos electrónicos, adjuntando archivos PDF únicos y personalizados para cada destinatario. Esta solución mitiga errores manuales y optimiza drásticamente los tiempos de respuesta en flujos de auditoría.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>💼 Experiencia Laboral</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="item">
+                    <h4>Auditor Junior</h4>
+                    <div class="meta">Aliado Contable Matuberm Cia Ltda | Octubre 2025 – Actualidad</div>
+                    <ul>
+                        <li>Ejecución estructurada de auditorías financieras y revisión exhaustiva de controles internos.</li>
+                        <li>Elaboración de papeles de trabajo de nivel avanzado para empresas privadas e intermedio para públicas.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Responsable de Outsourcing / Pasante</h4>
+                    <div class="meta">SEBDOM S.A.S. | Mayo 2024 – Julio 2025</div>
+                    <ul>
+                        <li>Ascenso de Pasante a Responsable tras demostrar alto nivel técnico y detalle en los primeros 6 meses.</li>
+                        <li>Gestión integral de carteras, conciliaciones complejas y supervisión de obligaciones tributarias.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Pasante de Auditoría y Consultoría</h4>
+                    <div class="meta">Leading Edge Audit & Consulting | Dic 2024 – Mar 2025</div>
+                    <ul>
+                        <li>Soporte técnico en validación de saldos y preparación de informes bajo estrictos cronogramas normativos.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Pasante Administrativo</h4>
+                    <div class="meta">Centro de Diálisis Dialicon S.A. | Sep 2022 – Ene 2023</div>
+                    <ul>
+                        <li>Gestión operativa de proveedores, cálculo de retenciones y detalle mensual de activos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>⚙️ Competencias Técnicas</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="item">
+                    <h4>Automatización y Código</h4>
+                    <p>Power Query, Macros en Excel, Visual Basic para Aplicaciones (VBA), Python (En formación), SQL (En formación).</p>
+                </div>
+                <div class="item">
+                    <h4>Ofimática y Finanzas</h4>
+                    <p>Excel Avanzado (Automatización financiera y conciliaciones complejas).</p>
+                </div>
+                <div class="item">
+                    <h4>Sistemas Especializados</h4>
+                    <p>Contífico (Intermedio-Avanzado), Fénix (Intermedio), Plataformas de Control (eByE, Quipux), SRI, Superintendencia de Compañías.</p>
+                </div>
+                <div class="item">
+                    <h4>Idiomas</h4>
+                    <p>Inglés B2 (Reading y Listening) y B1 (Speaking y Writing).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>🎓 Formación Académica</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="item">
+                    <h4>Licenciado en Contabilidad y Auditoría</h4>
+                    <div class="meta">Universidad Central del Ecuador | 2019 – 2025</div>
+                    <p>Registro SENESCYT: 1005-2025-3239463</p>
+                </div>
+                <div class="item">
+                    <h4>Especialización en Data Science & BI</h4>
+                    <div class="meta">DAXUS Latam | Actualidad</div>
+                    <p>Formación enfocada en Power BI, SQL, automatización con Python y herramientas de Inteligencia Artificial.</p>
+                </div>
+                <div class="item">
+                    <h4>Certificaciones Oficiales</h4>
+                    <div class="meta">Ministerio de Trabajo / CEINNCADE | 2022</div>
+                    <p>Excel Avanzado, Tablas Dinámicas y Aplicación de Excel Contable, Tributario y Laboral.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Curriculum Vitae Web - Anthony Quiroz</p>
+    </footer>
+
+    <script>
+        // Script para hacer que los menús se desplieguen al darles clic
+        const accordions = document.querySelectorAll('.accordion-header');
+        
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                const parent = this.parentElement;
+                
+                // Si quieres que al abrir una se cierren las demás, descomenta las siguientes 3 líneas:
+                // document.querySelectorAll('.accordion').forEach(other => {
+                //    if (other !== parent) other.classList.remove('active');
+                // });
+
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
