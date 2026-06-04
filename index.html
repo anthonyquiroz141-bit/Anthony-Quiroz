@@ -6,69 +6,73 @@
     <title>Anthony Quiroz | Perfil Profesional Premium</title>
     <style>
         :root {
-            --primary-bg: #0d1117; /* Negro profundo corporativo */
-            --secondary-bg: #161b22; /* Negro-gris para elementos */
-            --accent: #c4a165; /* Oro envejecido premium */
-            --text-main: #e2e8f0; /* Blanco-gris suave */
-            --text-secondary: #94a3b8; /* Gris medio para metadatos */
+            --primary-bg: #0d1117;
+            --secondary-bg: #161b22;
+            --accent: #c4a165;
+            --text-main: #e2e8f0;
+            --text-secondary: #94a3b8;
             --white: #ffffff;
-            --border-color: #30363d; /* Gris oscuro para bordes sutiles */
+            --border-color: #30363d;
         }
         body {
-            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Fuente serif elegante y profesional */
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
             background-color: var(--primary-bg);
             color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.8;
-            font-size: 10.5pt; /* Tamaño de fuente óptimo para lectura */
+            font-size: 10.5pt;
         }
         header {
             background-color: var(--primary-bg);
             border-bottom: 1px solid var(--border-color);
             color: var(--white);
             padding: 4rem 1.5rem;
-            text-align: center;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem; /* Espacio entre la foto y el texto */
+            flex-wrap: wrap; /* Para que en celulares se ponga uno debajo del otro */
         }
         header .profile-pic {
-            width: 130px;
-            height: 130px;
+            width: 90px; /* Tamaño reducido como solicitaste */
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent);
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 10px rgba(196, 161, 101, 0.3);
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(196, 161, 101, 0.2);
+            flex-shrink: 0; /* Evita que la imagen se deforme */
+        }
+        .header-text {
+            text-align: left;
         }
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             letter-spacing: 2px;
             font-weight: 700;
             text-transform: uppercase;
         }
         header p {
-            font-size: 1.25rem;
-            margin-top: 0.5rem;
+            font-size: 1.15rem;
+            margin-top: 0.3rem;
             opacity: 0.9;
             color: var(--accent);
         }
         .contact-links {
-            margin-top: 2rem;
+            margin-top: 1rem;
             display: flex;
-            justify-content: center;
             gap: 1.5rem;
-            flex-wrap: wrap;
         }
         .contact-links a {
             color: var(--white);
             text-decoration: none;
-            padding: 0.5rem 0;
+            padding: 0.2rem 0;
             font-weight: 500;
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s ease;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 1px;
         }
         .contact-links a:hover {
@@ -98,7 +102,7 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -120,7 +124,7 @@
         }
         .active .accordion-content {
             padding: 2rem;
-            max-height: 5000px; /* Suficiente para todo el contenido desglosado */
+            max-height: 5000px;
             border-top: 1px solid var(--border-color);
         }
         .item {
@@ -153,12 +157,6 @@
             margin-bottom: 0.5rem;
             text-align: justify;
         }
-        .highlight {
-            background-color: var(--secondary-bg);
-            border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            border-radius: 0 4px 4px 0;
-        }
         .group-heading {
             color: var(--white);
             margin-top: 1.5rem;
@@ -176,173 +174,93 @@
             font-weight: bold;
             color: var(--accent);
         }
+        .personal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .personal-grid p {
+            margin: 0.3rem 0;
+        }
+        /* Estilos para "Otra información" sutil */
+        .subtle-info {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--border-color); /* Color oscuro para que se funda con el fondo */
+            margin-top: 3rem;
+            padding: 2rem;
+            font-style: italic;
+            transition: color 0.3s ease;
+        }
+        .subtle-info:hover {
+            color: var(--text-secondary); /* Se ilumina ligeramente al pasar el mouse */
+        }
         footer {
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
             color: var(--text-secondary);
             font-size: 0.9rem;
             border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
+        }
+        @media (max-width: 600px) {
+            .personal-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .header-text {
+                text-align: center;
+            }
+            .contact-links {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="WhatsApp Image 2021-07-16 at 7.28.06 PM.jpeg" alt="Anthony Quiroz, Auditor Junior Premium" class="profile-pic">
-        <h1>ANTHONY QUIROZ</h1>
-        <p>Gestión Financiera | Automatización Analítica | Auditoría</p>
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/anthony-francois-quiroz-benavides-706b39398" target="_blank">LinkedIn</a>
-            <a href="mailto:anthonyquiroz141@hotmail.com">Contactar por Correo</a>
+        <!-- REEMPLAZA EL NOMBRE DE LA IMAGEN EN LA SIGUIENTE LÍNEA -->
+        <img src="NOMBRE_DE_TU_FOTO_AQUI.jpg" alt="Perfil" class="profile-pic">
+        <div class="header-text">
+            <h1>ANTHONY QUIROZ</h1>
+            <p>Gestión Financiera | Automatización Analítica | Auditoría</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/anthony-francois-quiroz-benavides-706b39398" target="_blank">LinkedIn</a>
+                <a href="mailto:anthonyquiroz141@hotmail.com">Contactar por Correo</a>
+            </div>
         </div>
     </header>
 
     <div class="container">
         
-        <div class="accordion highlight">
-            <div class="accordion-header">
-                <span>Proyectos de Automatización y Optimización de Flujos de Trabajo (VBA)</span>
-                <span class="icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                <p>Diseño y programación estructurada de una herramienta avanzada en Visual Basic para Aplicaciones (VBA), integrada directamente con Microsoft Outlook. Este script automatiza el flujo completo de envío masivo de notificaciones financieras, adjuntando archivos PDF únicos y totalmente personalizados para cada destinatario en un solo clic. Esta solución mitiga los errores de manipulación manual y optimiza drásticamente los tiempos de respuesta operativos en un 90% dentro de los flujos de auditoría.</p>
-            </div>
-        </div>
-
+        <!-- 1. Información Personal -->
         <div class="accordion">
             <div class="accordion-header">
-                <span>Experiencia Laboral</span>
+                <span>1. Información Personal</span>
                 <span class="icon">▼</span>
             </div>
             <div class="accordion-content">
-                <div class="item">
-                    <h4>Auditor Junior de Auditoría</h4>
-                    <div class="meta">Aliado Contable Matuberm Cia Ltda | Octubre 2025 – Actualidad</div>
-                    <ul>
-                        <li>Ejecución estructurada y analítica de auditorías financieras.</li>
-                        <li>Revisión exhaustiva de controles internos y validación de saldos contables.</li>
-                        <li>Elaboración, organización y custodia de papeles de trabajo de nivel Avanzado para empresas privadas e Intermedio para entidades públicas.</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    <h4>Responsable de Outsourcing Contable y Administrativo</h4>
-                    <div class="meta">SEBDOM S.A.S. | Noviembre 2024 – Julio 2025</div>
-                    <ul>
-                        <li>Ascenso directo de Pasante a Responsable tras demostrar un alto nivel técnico, rigurosidad metodológica y excepcional atención al detalle en los primeros 6 meses de gestión.</li>
-                        <li>Gestión integral de carteras de clientes privados y públicos.</li>
-                        <li>Ejecución de conciliaciones complejas de cuentas y supervisión estricta de obligaciones tributarias vigentes.</li>
-                    0}
-                    </ul>
-                </div>
-                <div class="item">
-                    <h4>Pasante de Auditoría-Auxiliar y Consultoría</h4>
-                    <div class="meta">Leading Edge Audit & Consulting Quito | Diciembre 2024 – Marzo 2025</div>
-                    <ul>
-                        <li>Soporte técnico directo en la validación de saldos y análisis de conciliaciones bancarias.</li>
-                        <li>Participación activa en la estructuración de informes financieros bajo normativas locales e internacionales e informes de control interno.</li>
-                    </ul>
-                </div>
-                <div class="item">
-                    <h4>Pasante Contable / Asistente Administrativo</h4>
-                    <div class="meta">Centro de Diálisis Dialicon S.A. | Septiembre 2022 – Enero 2023</div>
-                    <ul>
-                        <li>Supervisión y control del ciclo completo de proveedores: validación de comprobantes, cuadre de cajas chicas y planeación documentada de pagos.</li>
-                        <li>Liquidación de obligaciones con el IESS, control físico-lógico de activos fijos controlados y parametrización de retenciones en asientos diarios.</li>
-                    </ul>
+                <div class="personal-grid">
+                    <p><strong>Nombres:</strong> Anthony Francois Quiroz Benavides</p>
+                    <p><strong>Cédula:</strong> 1750901074</p>
+                    <p><strong>Celular:</strong> 0987716522</p>
+                    <p><strong>Correo:</strong> anthonyquiroz141@hotmail.com</p>
+                    <p><strong>Dirección:</strong> Ferroviaria / Adrián Navarro S12-92, Quito</p>
+                    <p><strong>Fecha de nacimiento:</strong> 14/01/2001</p>
+                    <p><strong>Estado civil:</strong> Soltero</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anthony-francois-quiroz-benavides-706b39398" target="_blank" style="color: var(--accent); text-decoration: none;">Perfil Profesional</a></p>
                 </div>
             </div>
         </div>
 
+        <!-- 2. Formación -->
         <div class="accordion">
             <div class="accordion-header">
-                <span>Matriz de Habilidades y Competencias Técnicas Desglosadas</span>
-                <span class="icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                
-                <h3 class="group-heading">Contabilidad y Finanzas Especializadas</h3>
-                <div class="group-content">
-                    <p><span class="skill-level">Avanzado-Privadas</span>: Creación de Papeles de Trabajo, Conciliaciones Complejas, Análisis de Balances, Teneduría de Libros.</p>
-                    <p><span class="skill-level">Intermedio-Públicas</span>: Gestión y Control Administrativo, Normativa Contable Pública.</p>
-                    <p><span class="skill-level">Avanzado</span>: Contabilidad de Costos (Análisis de producción e inventarios).</p>
-                    <p><span class="skill-level">Intermedio</span>: Finanzas Corporativas (Matemáticas Financieras).</p>
-                </div>
-
-                <h3 class="group-heading">Auditoría y Revisión Financiera</h3>
-                <div class="group-content">
-                    <p><span class="skill-level">Básico-SEPS</span>: Auditoría en el sector de la Economía Popular y Solidaria.</p>
-                    <p><span class="skill-level">Avanzado</span>: Creación de Papeles de Trabajo de Auditoría para el sector privado.</p>
-                    <p><span class="skill-level">Intermedio</span>: Creación de Papeles de Trabajo de Auditoría para el sector público.</p>
-                </div>
-
-                <h3 class="group-heading">Automatización, Análisis y Código</h3>
-                <div class="group-content">
-                    <p><span class="skill-level">Avanzado</span>: Macros (VBA) y Programación iterativa para optimización de flujos contables.</p>
-                    <p><span class="skill-level">Avanzado</span>: Modelado y Optimización con Excel (Tablas Dinámicas Complejas, Funciones Anidadas, Análisis de Datos).</p>
-                    <p><span class="skill-level">Avanzado</span>: Automatización Analítica (VBA con Outlook y Excel).</p>
-                    <p><span class="skill-level">Intermedio</span>: Inteligencia Artificial (Prompt Engineering Aplicada a Productividad).</p>
-                    <p><span class="skill-level">En formación</span>: Python, SQL y Power BI (Ruta de Ciencia de Datos y BI).</p>
-                    <p><span class="skill-level">Básico</span>: Visual Basic, Informática General.</p>
-                </div>
-
-                <h3 class="group-heading">Sistemas y Plataformas de Gestión</h3>
-                <div class="group-content">
-                    <p><span class="skill-level">Intermedio-Avanzado</span>: Plataforma Contífico (IA para Contabilidad).</p>
-                    <p><span class="skill-level">Intermedio</span>: Plataforma Fenix (Módulo Contabilidad).</p>
-                    <p><span class="skill-level">Intermedio</span>: Plataforma Supercias.</p>
-                    <p><span class="skill-level">Intermedio</span>: Plataforma SRI.</p>
-                    <p><span class="skill-level">Básico</span>: Plataforma Quipux, eByE.</p>
-                </div>
-
-                <h3 class="group-heading">Competencia Idiomática</h3>
-                <div class="group-content">
-                    <p><span class="skill-level">Inglés Profesional - Nivel B2</span>: Capacidad alta en comprensión lectora y auditiva, nivel B1 en producción oral y escrita.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="accordion">
-            <div class="accordion-header">
-                <span>Capacitación y Especialización Académica Detallada</span>
-                <span class="icon">▼</span>
-            </div>
-            <div class="accordion-content">
-                
-                <h3 class="group-heading">Tecnología de la Información y Automatización</h3>
-                <div class="group-content">
-                    <p><strong>Curso de Excel Avanzado y Tablas Dinámicas</strong> | *CEINNCADE / Ministerio de Trabajo* (Julio 2022 - 32h). Certificación acreditada en funciones avanzadas, macros y análisis de datos.</p>
-                    <p><strong>Curso de Excel Contable, Tributario y Laboral</strong> | *CEINNCADE / Ministerio de Trabajo* (Julio 2022). Aplicación práctica de Excel en entornos contables, laborales y tributarios.</p>
-                    <p><strong>Cursos Actuales (Daxus Latam):</strong> Formación avanzada en curso centrada en SQL, Power BI, Python y Excel Avanzado aplicados a la Ciencia de Datos y BI.</p>
-                    <p><strong>Curso de Manejo de la Inteligencia Artificial</strong> | *Daxus Latam* (En formación). Gestión eficiente de IA Generativa.</p>
-                    <p><strong>Visual Basic</strong> (Básico - Certificación).</p>
-                </div>
-
-                <h3 class="group-heading">Formación Contable y Auditoría</h3>
-                <div class="group-content">
-                    <p><strong>Creación de Papeles de Trabajo de Auditoría (Avanzado-Privadas / Intermedio-Públicas)</strong> (Certificación).</p>
-                    <p><strong>Contabilidad de Costos (Intermedio-Avanzado)</strong> (Certificación).</p>
-                    <p><strong>Auditoría (Básico-SEPS)</strong> (Certificación).</p>
-                    <p><strong>Curso de técnicas de estudio</strong> | *Ilvem*.</p>
-                    <p><strong>Curso Formación Militar</strong> | *U.E.FF.AA. Colegio Militar "Eloy Alfaro"*.</p>
-                </div>
-
-                <h3 class="group-heading">Competencia Idiomática (Inglés - Nivel B2)</h3>
-                <div class="group-content">
-                    <p><strong>Reading</strong>: B2 (Comprensión Lectora).</p>
-                    <p><strong>Listening</strong>: B2 (Comprensión Auditiva).</p>
-                    <p><strong>Speaking</strong>: B1 (Producción Oral).</p>
-                    <p><strong>Writing</strong>: B1 (Producción Escrita).</p>
-                    <p><strong>Cursos de inglés</strong> | *Charlotte Cendia*.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="accordion">
-            <div class="accordion-header">
-                <span>Formación Académica Principal</span>
+                <span>2. Formación Académica</span>
                 <span class="icon">▼</span>
             </div>
             <div class="accordion-content">
@@ -359,6 +277,141 @@
             </div>
         </div>
 
+        <!-- 3. Capacitaciones -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>3. Capacitaciones y Certificaciones</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3 class="group-heading">Tecnología de la Información y Automatización</h3>
+                <div class="group-content">
+                    <p><strong>Curso de Excel Avanzado y Tablas Dinámicas</strong> | *CEINNCADE / Ministerio de Trabajo* (Julio 2022 - 32h).</p>
+                    <p><strong>Curso de Excel Contable, Tributario y Laboral</strong> | *CEINNCADE / Ministerio de Trabajo* (Julio 2022).</p>
+                    <p><strong>Cursos Especializados (Daxus Latam):</strong> Formación avanzada en SQL, Power BI, Python y Excel Avanzado aplicados a la Ciencia de Datos y BI.</p>
+                    <p><strong>Curso de Manejo de la Inteligencia Artificial</strong> | *Daxus Latam*.</p>
+                    <p><strong>Visual Basic</strong> | Básico - Certificación.</p>
+                </div>
+
+                <h3 class="group-heading">Formación Complementaria</h3>
+                <div class="group-content">
+                    <p><strong>Curso de técnicas de estudio</strong> | *Ilvem*.</p>
+                    <p><strong>Curso Formación Militar</strong> | *U.E.FF.AA. Colegio Militar "Eloy Alfaro"*.</p>
+                    <p><strong>Cursos de Inglés</strong> | *Charlotte Cendia*.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Habilidades -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>4. Habilidades Técnicas Desglosadas</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <h3 class="group-heading">Contabilidad y Finanzas Especializadas</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Avanzado-Privadas</span>: Creación de Papeles de Trabajo, Conciliaciones Complejas, Análisis de Balances, Teneduría de Libros.</p>
+                    <p><span class="skill-level">Intermedio-Públicas</span>: Gestión y Control Administrativo, Normativa Contable Pública.</p>
+                    <p><span class="skill-level">Avanzado</span>: Contabilidad de Costos (Análisis de producción e inventarios).</p>
+                    <p><span class="skill-level">Intermedio</span>: Finanzas Corporativas (Matemáticas Financieras).</p>
+                </div>
+
+                <h3 class="group-heading">Auditoría y Revisión Financiera</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Avanzado</span>: Creación de Papeles de Trabajo de Auditoría para el sector privado.</p>
+                    <p><span class="skill-level">Intermedio</span>: Creación de Papeles de Trabajo de Auditoría para el sector público.</p>
+                    <p><span class="skill-level">Básico-SEPS</span>: Auditoría en el sector de la Economía Popular y Solidaria.</p>
+                </div>
+
+                <h3 class="group-heading">Automatización, Análisis y Código</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Avanzado</span>: Macros (VBA) y Programación iterativa para optimización de flujos contables.</p>
+                    <p><span class="skill-level">Avanzado</span>: Modelado y Optimización con Excel (Tablas Dinámicas Complejas, Análisis de Datos).</p>
+                    <p><span class="skill-level">En formación</span>: Python, SQL y Power BI (Ruta de Ciencia de Datos y BI).</p>
+                    <p><span class="skill-level">Intermedio</span>: Inteligencia Artificial (Prompt Engineering).</p>
+                </div>
+
+                <h3 class="group-heading">Sistemas y Plataformas</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Intermedio-Avanzado</span>: Plataforma Contífico.</p>
+                    <p><span class="skill-level">Intermedio</span>: Fenix (Módulo Contabilidad), Supercias, SRI.</p>
+                    <p><span class="skill-level">Básico</span>: Plataforma Quipux, eByE.</p>
+                </div>
+
+                <h3 class="group-heading">Idiomas</h3>
+                <div class="group-content">
+                    <p><span class="skill-level">Inglés Profesional - Nivel B2</span>: Reading (B2), Listening (B2), Speaking (B1), Writing (B1).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experiencia Laboral (La moví aquí para que fluya con el perfil) -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>Experiencia Laboral</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="item">
+                    <h4>Auditor Junior de Auditoría</h4>
+                    <div class="meta">Aliado Contable Matuberm Cia Ltda | Octubre 2025 – Actualidad</div>
+                    <ul>
+                        <li>Ejecución estructurada y analítica de auditorías financieras.</li>
+                        <li>Revisión exhaustiva de controles internos y validación de saldos contables.</li>
+                        <li>Redacción de informes de opinión y cartas de control interno, así como estructuración de notas aclaratorias.</li>
+                        <li>Elaboración, organización y custodia de papeles de trabajo de nivel Avanzado para empresas privadas e Intermedio para entidades públicas.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Responsable de Outsourcing Contable</h4>
+                    <div class="meta">SEBDOM S.A.S. | Noviembre 2024 – Julio 2025</div>
+                    <ul>
+                        <li>Ascenso directo de Pasante a Responsable tras demostrar un alto nivel técnico y excepcional atención al detalle en los primeros 6 meses.</li>
+                        <li>Gestión integral de carteras de clientes privados y públicos, ejecución de conciliaciones complejas de cuentas y supervisión de obligaciones tributarias.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Pasante de Auditoría-Auxiliar y Consultoría</h4>
+                    <div class="meta">Leading Edge Audit & Consulting Quito | Diciembre 2024 – Marzo 2025</div>
+                    <ul>
+                        <li>Soporte técnico directo en la validación de saldos, análisis de conciliaciones bancarias y participación en la estructuración de informes financieros bajo normativas locales e internacionales.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h4>Pasante Contable</h4>
+                    <div class="meta">Centro de Diálisis Dialicon S.A. | Septiembre 2022 – Enero 2023</div>
+                    <ul>
+                        <li>Supervisión y control del ciclo completo de proveedores: validación de comprobantes, cuadre de cajas chicas y planeación documentada de pagos.</li>
+                        <li>Liquidación de obligaciones con el IESS, control de activos fijos y parametrización de retenciones en asientos diarios.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Proyectos -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <span>5. Proyectos y Emprendimientos</span>
+                <span class="icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="item">
+                    <h4>Automatización y Optimización de Flujos de Trabajo (VBA)</h4>
+                    <p>Diseño y programación estructurada de una herramienta avanzada en Visual Basic para Aplicaciones (VBA) integrada con Microsoft Outlook. Este script automatiza el flujo completo de envío masivo de notificaciones, adjuntando archivos PDF únicos y personalizados para cada destinatario en un solo clic, mitigando errores manuales y optimizando los tiempos operativos en los procesos de auditoría.</p>
+                </div>
+                <div class="item">
+                    <h4>Negocio de Contabilidad ZEROLINE</h4>
+                    <p>Gestión independiente enfocada en la teneduría de libros, organización de información financiera y estructuración de procesos contables ágiles y eficientes. Este proyecto permite aplicar conocimientos técnicos para brindar soporte personalizado, asegurando el orden y cumplimiento normativo de manera estructurada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Otra Información (Sutil) -->
+        <div class="subtle-info">
+            Intereses adicionales: Ajedrez · Lectura · Sudoku · Matemáticas · Crucigramas · Carpintería · Tecnología
+        </div>
+
     </div>
 
     <footer>
@@ -372,12 +425,6 @@
         accordions.forEach(acc => {
             acc.addEventListener('click', function() {
                 const parent = this.parentElement;
-                
-                // Opción: Cerrar los demás al abrir uno
-                // document.querySelectorAll('.accordion').forEach(other => {
-                //    if (other !== parent) other.classList.remove('active');
-                // });
-
                 parent.classList.toggle('active');
             });
         });
